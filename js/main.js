@@ -120,8 +120,8 @@ icon.forEach( icon => {
     
     containerDom.innerHTML+=`<div id="containermain">
                                 <div class="card">
-                                    <i style="color:${lista.color};" class="${lista.prefix}solid ${lista.prefix}${lista.name}"></i>
-                                    <h5>${lista.name}</h5>
+                                    <i style="color:${icon.color};" class="${icon.prefix}solid ${icon.prefix}${icon.name}"></i>
+                                    <h5>${icon.name}</h5>
                                 </div>
                             </div>`
 });
