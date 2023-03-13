@@ -131,9 +131,17 @@ icon.forEach( icon => {
 //creazione add event listner per filtrare categorie 
 selectDom.addEventListener('change',
 function(){
-    if (selectDom.value='animal'){
+    if (selectDom.value=='animal'){
         icon.filter(elemento=>{
             elemento.type=='animal'
+        })
+    } else if (selectDom.value=='vegetable'){
+        icon.filter(elemento=>{
+            elemento.type=='vegetable'
+        })
+    } else if (selectDom.value =='user'){
+        icon.filter(elemento=>{
+            elemento.type=='user'
         })
     }
    
