@@ -114,6 +114,8 @@ const icon =[
 ];
 
 const containerDom= document.getElementById('containericon');
+//collegamento selettore html con js 
+const selectDom = document.getElementById('selector')
 
 
 icon.forEach( icon => {
@@ -125,3 +127,15 @@ icon.forEach( icon => {
                                 </div>
                             </div>`
 });
+
+//creazione add event listner per filtrare categorie 
+selectDom.addEventListener('change',
+function(){
+    if (selectDom.value='animal'){
+        icon.filter(elemento=>{
+            elemento.type=='animal'
+        })
+    }
+   
+}
+)
