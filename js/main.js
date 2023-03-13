@@ -119,31 +119,35 @@ const selectDom = document.getElementById('selector')
 
 
 icon.forEach( icon => {
-    
-    containerDom.innerHTML+=`<div id="containermain">
-                                <div class="card">
-                                    <i style="color:${icon.color};" class="${icon.prefix}solid ${icon.prefix}${icon.name}"></i>
-                                    <h5>${icon.name}</h5>
-                                </div>
-                            </div>`
+    creazioneElemento(icon);
+   
 });
 
 //creazione add event listner per filtrare categorie 
 selectDom.addEventListener('change',
 function(){
-    if (selectDom.value=='animal'){
-        icon.filter(elemento=>{
-            elemento.type=='animal'
-        })
-    } else if (selectDom.value=='vegetable'){
-        icon.filter(elemento=>{
-            elemento.type=='vegetable'
-        })
-    } else if (selectDom.value =='user'){
-        icon.filter(elemento=>{
-            elemento.type=='user'
-        })
+    containerDom.innerHTML="";
+    icon.filter(elemento =>{
+        if(elemento.type == selectDom.value){
+           containerDom.append(creazioneElemento(elemento));
+        }
+    });
+       if (selectDom.value=='all'){
+		icon.forEach( icon=>{
+			creazioneElemento(icon);
+		})
+	   }
     }
-   
-}
 )
+
+
+//creo una funzione per elemento html dinamico
+
+function creazioneElemento(icon){
+    containerDom.innerHTML+=`<div id="containermain">
+                                    <div class="card">
+                                        <i style="color:${icon.color};" class="${icon.prefix}solid ${icon.prefix}${icon.name}"></i>
+                                        <h5>${icon.name}</h5>
+                                    </div>
+                             </div>`   
+}
