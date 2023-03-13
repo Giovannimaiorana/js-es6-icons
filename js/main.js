@@ -129,7 +129,7 @@ function(){
     containerDom.innerHTML="";
     icon.filter(elemento =>{
         if(elemento.type == selectDom.value){
-           containerDom.append(creazioneElemento(elemento));
+           creazioneElemento(elemento);
         }
     });
        if (selectDom.value=='all'){
